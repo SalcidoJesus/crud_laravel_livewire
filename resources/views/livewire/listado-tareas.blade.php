@@ -33,7 +33,7 @@
 							<x-mary-button icon="o-ellipsis-vertical" class="btn-square" />
 						</x-slot:trigger>
 
-						<x-mary-menu-item title="Ver" icon="o-information-circle" @click="$wire.modal_abierto = true" />
+						<x-mary-menu-item title="Ver" icon="o-information-circle"/>
 						<x-mary-menu-item title="Editar" icon="o-pencil" />
 						<x-mary-menu-item title="Borrar" icon="o-trash" />
 					</x-mary-dropdown>
@@ -44,14 +44,6 @@
 		</tbody>
 	</table>
 
-
-
-	<x-mary-modal wire:model="modal_abierto" class="backdrop-blur">
-		<p>{{ $titulo }}</p>
-		<p>{{ $descripcion }}</p>
-		<p>{{ $estatus }}</p>
-		<x-mary-button label="Cerrar" @click="$wire.modal_abierto = false" />
-	</x-mary-modal>
 
 
 </div>
