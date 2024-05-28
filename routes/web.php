@@ -35,8 +35,9 @@ Route::middleware('auth')->group(function () {
 
 // rutas para tareas
 // esto muestra la lista de tareas
-Route::get('/tareas', [TareaController::class, 'index'])->middleware(['auth', 'verified'])->name('tareas.index');
+Route::get('/tareas', [TareaController::class, 'index'])->middleware(['auth'])->name('tareas.index');
 // esto muestra el formulario para crear una tarea
-Route::get('/tareas/create', [TareaController::class, 'create'])->middleware(['auth', 'verified'])->name('tareas.create');
+Route::get('/tareas/create', [TareaController::class, 'create'])->middleware(['auth'])->name('tareas.create');
+Route::get('/tareas/{id}/edit', [TareaController::class, 'edit'])->middleware(['auth'])->name('tareas.edit');
 
 require __DIR__.'/auth.php';

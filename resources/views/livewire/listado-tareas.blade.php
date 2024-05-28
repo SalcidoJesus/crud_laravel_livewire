@@ -33,8 +33,8 @@
 							<x-mary-button icon="o-ellipsis-vertical" class="btn-square" />
 						</x-slot:trigger>
 
-						<x-mary-menu-item title="Ver" icon="o-information-circle"/>
-						<x-mary-menu-item title="Editar" icon="o-pencil" />
+						<x-mary-menu-item title="Ver" icon="o-information-circle" @click="$wire.editar({{ $tarea->id }})" />
+						<x-mary-menu-item title="Editar" icon="o-pencil" link="{{ route('tareas.edit', $tarea->id) }}" />
 						<x-mary-menu-item title="Borrar" icon="o-trash" />
 					</x-mary-dropdown>
 				</td>
@@ -44,6 +44,11 @@
 		</tbody>
 	</table>
 
-
+	<x-mary-modal wire:model="mostrarModal" class="backdrop-blur">
+		<div>{{ $titulo }}</div>
+		<div>{{ $descripcion }}</div>
+		<div>{{ $estatus }}</div>
+		<x-mary-button label="Cancel" @click="$wire.mostrarModal = false" />
+	</x-mary-modal>
 
 </div>

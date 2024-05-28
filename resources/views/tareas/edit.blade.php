@@ -1,4 +1,4 @@
-@section('titulo', 'Notas')
+@section('titulo', 'Editar nota')
 <x-app-layout>
 
 
@@ -8,10 +8,9 @@
 				<div class="text-gray-900">
 
 
-					<x-plantilla-drawer>
-						<x-mary-button label="Crear nota" link="{{ route('notas.create') }}" />
 
-						<livewire:listado-notas />
+					<x-plantilla-drawer>
+						<livewire:formulario-editar-tarea :id="$id" />
 					</x-plantilla-drawer>
 
 

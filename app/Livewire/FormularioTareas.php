@@ -43,9 +43,6 @@ class FormularioTareas extends Component
 		$this -> dispatch('tarea-guardada');
 
 		$this -> reset();
-		$this -> titulo = '';
-		$this -> descripcion = '';
-		$this -> estatus = 0;
 		// $this -> reset([ 'titulo', 'descripcion', 'estatus' ]);
 
 	}

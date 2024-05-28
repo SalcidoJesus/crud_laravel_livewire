@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tarea;
 use Illuminate\Http\Request;
 
 class TareaController extends Controller
@@ -43,7 +44,11 @@ class TareaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+		$tarea = Tarea::find($id);
+		// dd($tarea);
+        return view('tareas.edit', [
+			'id' => $id
+		]);
     }
 
     /**
