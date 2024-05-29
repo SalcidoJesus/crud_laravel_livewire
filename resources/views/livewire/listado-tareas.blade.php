@@ -44,11 +44,15 @@
 		</tbody>
 	</table>
 
+
 	<x-mary-modal wire:model="mostrarModal" class="backdrop-blur">
 		<div>{{ $titulo }}</div>
 		<div>{{ $descripcion }}</div>
 		<div>{{ $estatus }}</div>
 		<x-mary-button label="Cancel" @click="$wire.mostrarModal = false" />
 	</x-mary-modal>
+
+
+
 
 </div>

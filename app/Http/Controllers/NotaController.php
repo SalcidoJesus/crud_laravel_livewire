@@ -55,7 +55,22 @@ class NotaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+		try {
+
+			$nota = Nota::find($id);
+			if ($nota -> fk_usuario != auth()->user()->id) {
+				return view('notas.error');
+			}
+
+		} catch (\Throwable $th) {
+
+			return view('notas.error');
+
+		}
+
+		return view('notas.edit', [
+			'id' => $id,
+		]);
     }
 
     /**

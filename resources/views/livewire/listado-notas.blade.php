@@ -39,7 +39,7 @@
 							</x-slot:trigger>
 
 							<x-mary-menu-item title="Ver" icon="o-information-circle" link="{{ route('notas.show', $notas->id)}}"/>
-							<x-mary-menu-item title="Editar" icon="o-pencil" />
+							<x-mary-menu-item title="Editar" icon="o-pencil"  link="{{ route('notas.edit', $notas->id)}}"/>
 							<x-mary-menu-item title="Borrar" icon="o-trash" />
 						</x-mary-dropdown>
 					</td>

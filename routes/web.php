@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
 	// esto muesta el formulario para crear una nota
 	Route::get('/notas/create', [ NotaController::class, 'create' ])->name('notas.create');
 	Route::get('/notas/{id}', [ NotaController::class, 'show' ])->name('notas.show');
+	Route::get('/notas/{id}/edit', [ NotaController::class, 'edit' ])->name('notas.edit');
 
 });
 

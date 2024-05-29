@@ -24,12 +24,14 @@ class ListadoTareas extends Component
 		$this -> estatus = $nota_1-> estatus;
 	}
 
+
+
 	public function editar( $id )
 	{
+		$this -> mostrarModal = true;
 		$nota_encontrada = Nota::find($id);
 		// dd($nota_encontrada);
 		$this -> llenarModal( $nota_encontrada );
-		$this -> mostrarModal = true;
 
 	}
 
