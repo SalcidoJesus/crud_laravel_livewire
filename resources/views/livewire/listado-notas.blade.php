@@ -3,7 +3,7 @@
 @endphp
 <div>
 
-	<input wire:model.live="search">
+	{{-- <input wire:model.live="search"> --}}
 
 
     <table class="table">
@@ -38,7 +38,7 @@
 								<x-mary-button icon="o-ellipsis-vertical" class="btn-square" />
 							</x-slot:trigger>
 
-							<x-mary-menu-item title="Ver" icon="o-information-circle"/>
+							<x-mary-menu-item title="Ver" icon="o-information-circle" link="{{ route('notas.show', $notas->id)}}"/>
 							<x-mary-menu-item title="Editar" icon="o-pencil" />
 							<x-mary-menu-item title="Borrar" icon="o-trash" />
 						</x-mary-dropdown>

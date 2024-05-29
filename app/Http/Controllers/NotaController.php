@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nota;
 use Illuminate\Http\Request;
 
 class NotaController extends Controller
@@ -40,7 +41,13 @@ class NotaController extends Controller
      */
     public function show(string $id)
     {
-        //
+		// busca un elemento por el id
+		$nota = Nota::find($id);
+		// dd($nota);
+
+		return view('notas.show', [
+			'nota' => $nota
+		]);
     }
 
     /**

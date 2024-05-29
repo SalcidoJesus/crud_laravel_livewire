@@ -1,4 +1,4 @@
-@section('titulo', 'Notas')
+	@section('titulo', 'Notas')
 <x-app-layout>
 
 
