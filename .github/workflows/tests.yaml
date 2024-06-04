@@ -1,0 +1,32 @@
+name: Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Instalar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Copiar .env
+        run: |
+          cp .env.example .env
+
+      - name: Instalar composer
+        run: |
+          composer install --no-interaction
+
+      -
