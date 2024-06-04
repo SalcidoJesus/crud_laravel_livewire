@@ -9,9 +9,9 @@
 
 
 					<x-plantilla-drawer>
-						{{-- <x-mary-button label="Crear nota" link="{{ route('notas.create') }}" /> --}}
-
+						<x-mary-button label="Crear nota" link="{{ route('notas.create') }}" />
 						<livewire:listado-notas />
+
 					</x-plantilla-drawer>
 
 

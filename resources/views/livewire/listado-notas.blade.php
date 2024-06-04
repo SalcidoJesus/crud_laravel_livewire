@@ -62,6 +62,6 @@
 	</table>
 
 
-	{{ $notas->onEachSide(2)->links() }}
+	{{ $notas->onEachSide(2)->links('pagination::tailwind') }}
 
 </div>
