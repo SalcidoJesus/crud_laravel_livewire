@@ -14,7 +14,7 @@ jobs:
       - name: Copiar .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Instalar dependencias
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer update --ignore-platform-reqs
       - name: Generar key
         run: php artisan key:generate
       - name: Generar storage link
