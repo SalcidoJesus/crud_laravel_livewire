@@ -1,33 +1,23 @@
-name: Tests
-
+name: Subir proyecto de laravel
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
-      - main
-
-
+      - master
 jobs:
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
+  web-deploy:
+    name: Deploy
+    runs-on: self-hosted
     steps:
-
-      - uses: actions/checkout@v2
-
-      - name: Instalar PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-
+      - name: Buscar el código más reciente
+        uses: actions/checkout@v2.3.2
+      - uses: actions/setup-node@master
       - name: Copiar .env
-        run: |
-          cp .env.example .env
-
-      - name: Instalar composer
-        run: |
-          composer install --no-interaction
-
-      -
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Instalar dependencias
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Generar key
+        run: php artisan key:generate
+      - name: Generar storage link
+        run: php artisan storage:link
+      - name: Permisos de carpetas
+        run: chmod -R 777 storage bootstrap/cache
