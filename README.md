@@ -19,4 +19,4 @@ o así
 <x-alerta></x-alerta>
 ```
 
-hola2 :D
+hola3 :D
