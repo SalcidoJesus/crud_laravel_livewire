@@ -18,3 +18,5 @@ o así
 ```html
 <x-alerta></x-alerta>
 ```
+
+hola :D
