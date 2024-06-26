@@ -13,10 +13,10 @@ jobs:
       - uses: actions/setup-node@master
       - name: Copiar .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-      - name: composer install
-        run: composer install
       - name: composer update
         run: composer update
+      - name: composer install
+        run: composer install
       - name: Generar key
         run: php artisan key:generate
       - name: Generar storage link
