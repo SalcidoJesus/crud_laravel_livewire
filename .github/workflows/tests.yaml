@@ -11,8 +11,8 @@ jobs:
       - name: Buscar el código más reciente
         uses: actions/checkout@v2.3.2
       - uses: actions/setup-node@master
-      #- name: Copiar .env
-        #run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Copiar .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: composer update
         run: composer update
       - name: composer install
