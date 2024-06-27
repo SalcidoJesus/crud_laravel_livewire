@@ -25,4 +25,6 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
       - name: npm run build
         run: npm run build
+      - name: npm install
+        run: npm i
 
