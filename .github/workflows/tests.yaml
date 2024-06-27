@@ -27,8 +27,7 @@ jobs:
         run: npm i
       - name: npm run build
         run: npm run build
-      - name: .env
-        with:
+        env:
           VARIABLE: ${{ secrets.VARIABLE }}
           APP_NAME: ${{ secrets.APP_NAME }}
           APP_TIMEZONE: ${{ secrets.APP_TIMEZONE }}
