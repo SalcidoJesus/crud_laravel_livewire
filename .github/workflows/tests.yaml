@@ -26,3 +26,4 @@ jobs:
       - name: npm install
         run: npm i
       - name: npm run build
+        run: npm run build
