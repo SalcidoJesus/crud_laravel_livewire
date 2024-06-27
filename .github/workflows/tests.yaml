@@ -26,18 +26,3 @@ jobs:
       - name: npm install
         run: npm i
       - name: npm run build
-        run: |
-          npm run build
-          echo VARIABLE=${{ secrets.VARIABLE }} >> .env
-          echo APP_NAME=${{ secrets.APP_NAME }} >> .env
-          echo APP_TIMEZONE=${{ secrets.APP_TIMEZONE }} >> .env
-          echo APP_URL=${{ secrets.APP_URL }} >> .env
-          echo APP_LOCALE=${{ secrets.APP_LOCALE }} >> .env
-          echo APP_FALLBACK_LOCALE=${{ secrets.APP_FALLBACK_LOCALE }} >> .env
-          echo APP_FAKER_LOCALE=${{ secrets.APP_FAKER_LOCALE }} >> .env
-          echo DB_CONNECTION=${{ secrets.DB_CONNECTION }} >> .env
-          echo DB_HOST=${{ secrets.DB_HOST }} >> .env
-          echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-          echo DB_DATABASE=${{ secrets.DB_DATABASE }} >> .env
-          echo DB_USERNAME=${{ secrets.DB_USERNAME }} >> .env
-          echo DB_PASSWORD=${{ secrets.DB_PASSWORD }} >> .env
